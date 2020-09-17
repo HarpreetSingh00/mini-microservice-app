@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import axios from 'axios'
 import { Formik } from 'formik'
 import * as yup from 'yup'
@@ -11,8 +11,24 @@ const schema = yup.object({
 
 export default () => {
 
-    const handleSubmit = (values) => {
+    const handleSubmit = async (values) => {
         const formData = JSON.stringify(values, null, 2)
+
+        try {
+
+            await axios.post('http://localhost:4000/posts',
+                formData,
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                })
+
+
+        } catch (e) {
+            console.log('error occured while creating post', e)
+        }
+
     }
 
     return (
@@ -34,7 +50,6 @@ export default () => {
                         <Form noValidate onSubmit={handleSubmit}>
                             <Form.Group controlId="postTitle">
                                 <Form.Label>Post Title</Form.Label>
-                                {console.log('--- errors ----', errors)}
                                 <Form.Control
                                     required
                                     type="text"
