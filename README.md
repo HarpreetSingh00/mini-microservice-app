@@ -1,5 +1,14 @@
 # mini-microservice-app
 
+############ MMA-2 ##########
+Event Bus and Query microservice implementation
+
+We have set the Event bus implementaion inside the event-bus microservice, whenever user is going to create a post or comment we will emit events to event bus and then those events will be binded to all services. On the basis of event type, services will act on specfic event that they need 
+
+Query microservice: This microservice will listen to the post creation and comment creation events. This will bind the whole data and return that in single response
+
+
+
 ############ MMA-1 ##########
 This is very first microservice app for learning purpose. We will create Post and Comment's service
 

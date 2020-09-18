@@ -14,7 +14,7 @@ export default () => {
 
     const fetchPostList = async () => {
         try {
-            const res = await axios.get('http://localhost:4000/posts')
+            const res = await axios.get('http://localhost:4002/posts')
             if (!!res && !!res.status) {
                 const { data } = res
                 setPostList(Object.values(data))
@@ -32,7 +32,7 @@ export default () => {
                         <div key={post.id} className="card">
                             <div className="card-body">
                                 <h3>{post.postTitle}</h3>
-                                <CommentList postId={post.id} />
+                                <CommentList commentList={post.comments} />
                                 <CommentCreate postId={post.id} />
                             </div>
                         </div>
