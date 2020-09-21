@@ -1,5 +1,13 @@
 # mini-microservice-app
 
+############ MMA-3 ##########
+
+Adding New Comment Moderate Service that will filter particular word in the comment, on the basis on that, comment can be either in one of the state: pending | approved | rejected
+
+Implementation for the Query Service when it went down
+
+===================================================================================================
+
 ############ MMA-2 ##########
 Event Bus and Query microservice implementation
 
@@ -7,7 +15,7 @@ We have set the Event bus implementaion inside the event-bus microservice, whene
 
 Query microservice: This microservice will listen to the post creation and comment creation events. This will bind the whole data and return that in single response
 
-
+===================================================================================================
 
 ############ MMA-1 ##########
 This is very first microservice app for learning purpose. We will create Post and Comment's service
@@ -21,3 +29,14 @@ Here we are calling post api to fetch the posts and for each post we are calling
 
 What we have to do is we have to call single api that will return the posts with their comments.
 So we will have two options sync or async communication, as we know async is better that sync communication where we will use the event bus to tie up the listners to various services.
+
+===================================================================================================
+
+PORTS DETAILS: 
+
+React App: http://127.0.0.1:3000
+Post Service: http://127.0.0.1:4000
+Comment Service: http://127.0.0.1:4001
+Moderate Service: http://127.0.0.1:4003
+Query Service: http://127.0.0.1:4002
+Event Bus Service: http://127.0.0.1:4005

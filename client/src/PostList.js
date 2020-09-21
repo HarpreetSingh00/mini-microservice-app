@@ -14,7 +14,7 @@ export default () => {
 
     const fetchPostList = async () => {
         try {
-            const res = await axios.get('http://localhost:4002/posts')
+            const res = await axios.get('http://127.0.0.1:4002/posts')
             if (!!res && !!res.status) {
                 const { data } = res
                 setPostList(Object.values(data))

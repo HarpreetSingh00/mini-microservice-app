@@ -16,7 +16,7 @@ export default () => {
 
         try {
 
-            await axios.post('http://localhost:4000/posts',
+            await axios.post('http://127.0.0.1:4000/posts',
                 formData,
                 {
                     headers: {

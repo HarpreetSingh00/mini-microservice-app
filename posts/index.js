@@ -22,15 +22,19 @@ app.post('/posts', async (req, res) => {
         postTitle
     }
 
-    //It is emitting the event to the event bus when any post is created
-    await axios.post('http://localhost:4005/events',
-        {
-            type: 'PostCreated',
-            data: {
-                id,
-                postTitle,
-            }
-        })
+    try {
+        //It is emitting the event to the event bus when any post is created
+        await axios.post('http://127.0.0.1:4005/events',
+            {
+                type: 'PostCreated',
+                data: {
+                    id,
+                    postTitle,
+                }
+            })
+    } catch (e) {
+        console.log('Error occured while emiting event from Posts', e.message)
+    }
 
     res.status(201).send(posts[id])
 })
