@@ -1,6 +1,28 @@
 # mini-microservice-app
 
-############ MMA-4 ##########
+############ MMA-5 ########## Kubernetes
+
+Starting Kubernetes
+
+Command to check Kubernetes running: kubectl version
+Creating a Kubernetes config file
+Create Pod
+In the posts.yaml: 
+    There we wrote harpreet00singh/posts:0.0.1, if we will not specify the version on the image it will put latest bydefault latest, so Kubernetes try to fetch the image from docker hub, now here it will assume that this image is present on the local machine 
+
+Command:  
+To process a config file and creation of objects:
+        kubectl apply -f posts.yaml
+List the different pods that are running inside the cluster:
+        kubectl get pods
+To execute the command inside the container of the pod: 
+        kubectl exec -it posts sh      
+
+
+
+=================================================================================================
+
+############ MMA-4 ########## Dockerizing
 
 Dockerizing the various service's
 
@@ -8,7 +30,7 @@ Dockerizing the various service's
 
 =================================================================================================
 
-############ MMA-3 ##########
+############ MMA-3 ########## Comment Moderate Service
 
 Adding New Comment Moderate Service that will filter particular word in the comment, on the basis on that, comment can be either in one of the state: pending | approved | rejected
 
@@ -16,7 +38,8 @@ Implementation for the Query Service when it went down
 
 ===================================================================================================
 
-############ MMA-2 ##########
+############ MMA-2 ########## Event Bus and Query microservice
+
 Event Bus and Query microservice implementation
 
 We have set the Event bus implementaion inside the event-bus microservice, whenever user is going to create a post or comment we will emit events to event bus and then those events will be binded to all services. On the basis of event type, services will act on specfic event that they need 
@@ -25,7 +48,8 @@ Query microservice: This microservice will listen to the post creation and comme
 
 ===================================================================================================
 
-############ MMA-1 ##########
+############ MMA-1 ########## First Microservice App
+
 This is very first microservice app for learning purpose. We will create Post and Comment's service
 
 Till here step we have created the post service and comment service

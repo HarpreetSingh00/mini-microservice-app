@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod #we need to create a pod whose name will  be posts that defined under metadata
+metadata: 
+  name: posts
+spec:
+  containers: #we will create and run a posts container from the defined image
+    - name: posts
+      image: harpreet00singh/posts:0.0.1
