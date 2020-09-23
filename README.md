@@ -1,5 +1,13 @@
 # mini-microservice-app
 
+############ MMA-4 ##########
+
+Dockerizing the various service's
+
+> We will create Dokerfile and write the commands in it
+
+=================================================================================================
+
 ############ MMA-3 ##########
 
 Adding New Comment Moderate Service that will filter particular word in the comment, on the basis on that, comment can be either in one of the state: pending | approved | rejected
